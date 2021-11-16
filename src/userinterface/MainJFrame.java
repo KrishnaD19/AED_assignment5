@@ -135,6 +135,7 @@ public class MainJFrame extends javax.swing.JFrame {
         userNameJTextField.setText("");
         passwordField.setText("");
 
+        
         container.removeAll();
         JPanel blankJP = new JPanel();
         container.add("blank", blankJP);
