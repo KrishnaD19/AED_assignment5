@@ -10,5 +10,13 @@ package Business.DeliveryMan;
  * @author harold
  */
 public class DeliveryMan {
+
+    public Object getName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getUsername() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

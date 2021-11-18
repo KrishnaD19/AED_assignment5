@@ -6,8 +6,10 @@
 package Business;
 
 
+import Business.Customer.Customer;
 import Business.Customer.CustomerDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
+import Business.Restaurant.Restaurant;
 import Business.Restaurant.RestaurantDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
@@ -20,9 +22,10 @@ import java.util.ArrayList;
 public class EcoSystem extends Organization{
     
     private static EcoSystem business;
-    private RestaurantDirectory restaurantDirectory;
-    private CustomerDirectory customerDirectory;
-    private DeliveryManDirectory deliveryManDirectory;
+    private RestaurantDirectory restaurantDirectory = new RestaurantDirectory();
+    private CustomerDirectory customerDirectory = new CustomerDirectory();
+    private DeliveryManDirectory deliveryManDirectory = new DeliveryManDirectory();
+    //private OrderDirectory orderDirectory = new OrderDirectory();
 
     public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
 
@@ -54,4 +57,36 @@ public class EcoSystem extends Organization{
        //
        return false;
     }
+    
+    public void removeCustomer(String id) 
+             {
+        customerDirectory.removeCustomer(id);
+    }
+
+    public void addCustomer(Customer c) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    customerDirectory.addCustomer(c);
+    }
+
+    public CustomerDirectory getCustomerDirectory() {
+        return customerDirectory;
+    }
+
+    public void removeDeliveryMan(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getDeliveryManDirectory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void removeRestaurant(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Restaurant findRestaurant(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }

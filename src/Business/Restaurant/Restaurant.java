@@ -10,5 +10,9 @@ package Business.Restaurant;
  * @author harold
  */
 public class Restaurant {
+
+    public Object getHm() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

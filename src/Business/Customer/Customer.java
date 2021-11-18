@@ -5,10 +5,22 @@
  */
 package Business.Customer;
 
+import Business.UserAccount.UserAccount;
+
 /**
  *
  * @author harold
  */
-public class Customer {
+public class Customer extends UserAccount{
+    
+    public Customer(String username, String password) {
+        super(username, password);
+    }
+
+
+    public Object getName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

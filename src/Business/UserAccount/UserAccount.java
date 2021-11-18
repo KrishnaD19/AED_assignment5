@@ -20,12 +20,12 @@ public class UserAccount {
     private Role role;
     private WorkQueue workQueue;
 
-    public UserAccount() {
-        workQueue = new WorkQueue();
+    public UserAccount(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
     
-    
-    
+      
     public String getUsername() {
         return username;
     }
