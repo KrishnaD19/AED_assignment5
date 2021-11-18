@@ -8,7 +8,10 @@ package Business;
 
 import Business.Customer.Customer;
 import Business.Customer.CustomerDirectory;
+import Business.DeliveryMan.DeliveryMan;
 import Business.DeliveryMan.DeliveryManDirectory;
+import Business.Orders.OrderDirectory;
+import Business.Orders.Orders;
 import Business.Restaurant.Restaurant;
 import Business.Restaurant.RestaurantDirectory;
 import Business.Role.Role;
@@ -25,7 +28,7 @@ public class EcoSystem extends Organization{
     private RestaurantDirectory restaurantDirectory = new RestaurantDirectory();
     private CustomerDirectory customerDirectory = new CustomerDirectory();
     private DeliveryManDirectory deliveryManDirectory = new DeliveryManDirectory();
-    //private OrderDirectory orderDirectory = new OrderDirectory();
+    private OrderDirectory orderDirectory = new OrderDirectory();
 
     public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
 
@@ -76,8 +79,8 @@ public class EcoSystem extends Organization{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Object getDeliveryManDirectory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public DeliveryManDirectory getDeliveryManDirectory() {
+        return deliveryManDirectory;
     }
 
     public void removeRestaurant(String toString) {
@@ -87,6 +90,23 @@ public class EcoSystem extends Organization{
     public Restaurant findRestaurant(String toString) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public OrderDirectory getOrderDirectory() {
+        return orderDirectory;
+    }
+
+    public RestaurantDirectory getRestaurantDirectory() {
+        return restaurantDirectory;
+    }
+
+    public void addOrder(Orders o) {
+       try{
+            orderDirectory.addOrder(o);
+        }catch(Exception e){
+            orderDirectory = new OrderDirectory();
+            orderDirectory.addOrder(o);
+        }
+       }
 
     
 }

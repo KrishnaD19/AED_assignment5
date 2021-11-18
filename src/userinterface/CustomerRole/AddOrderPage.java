@@ -7,6 +7,7 @@ package userinterface.CustomerRole;
 import Business.Customer.Customer;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
+import Business.Orders.Orders;
 import Business.Restaurant.Restaurant;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

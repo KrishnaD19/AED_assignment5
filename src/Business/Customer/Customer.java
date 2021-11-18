@@ -5,6 +5,7 @@
  */
 package Business.Customer;
 
+import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 
 /**
@@ -13,14 +14,37 @@ import Business.UserAccount.UserAccount;
  */
 public class Customer extends UserAccount{
     
-    public Customer(String username, String password) {
-        super(username, password);
+    private String name;
+    private Address address;
+    
+    /**
+     *
+     */
+    public Customer(String usr, String pass, Role r,String contactNo, String name, Address add){
+        
+        super(usr, pass, r, contactNo);
+        this.name = name;
+        this.address = add;
+    }
+    
+
+    public String getName() {
+        return name;
     }
 
-
-    public Object getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setName(String Name) {
+        this.name = Name;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+    
+    
     
 }
+
