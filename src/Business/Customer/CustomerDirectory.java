@@ -5,6 +5,7 @@
  */
 package Business.Customer;
 
+import Business.Restaurant.Restaurant;
 import java.util.ArrayList;
 
 /**
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * @author harold
  */
 public class CustomerDirectory {
-    
+
     ArrayList<Customer> customerList = new ArrayList<>();
 
     public CustomerDirectory() {
@@ -23,7 +24,7 @@ public class CustomerDirectory {
         customerList.add(c);
     }
 
-    public ArrayList<Customer> getCustomerList() {
+   public ArrayList<Customer> getCustomerList() {
         return customerList;
     }
 
@@ -49,5 +50,5 @@ public class CustomerDirectory {
         }
         return null;
     }
-    
+
 }

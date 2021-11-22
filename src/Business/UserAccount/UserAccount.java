@@ -26,10 +26,6 @@ public class UserAccount {
         this.contactNo = contactNo;
     }
 
-    UserAccount(String username, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public String getContactNo() {
         return contactNo;
     }

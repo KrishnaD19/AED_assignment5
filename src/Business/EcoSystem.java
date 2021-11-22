@@ -30,11 +30,80 @@ public class EcoSystem extends Organization{
     private DeliveryManDirectory deliveryManDirectory = new DeliveryManDirectory();
     private OrderDirectory orderDirectory = new OrderDirectory();
 
-    public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
+    public OrderDirectory getOrderDirectory() {
+        return orderDirectory;
+    }
+
+    public void setOrderDirectory(OrderDirectory orderDirectory) {
+        this.orderDirectory = orderDirectory;
+    }
+    
+    public void addCustomer(Customer c){
+        customerDirectory.addCustomer(c);
+    }
+    
+    
+    public void addDeliveryMan(DeliveryMan dd) {
+        deliveryManDirectory.addDeliveryMan(dd);
+    }
+    
+    public void addCRestaurant(Restaurant r){
+        restaurantDirectory.addRestaurant(r);
+    }
+
+    public static EcoSystem getBusiness() {
+        return business;
+    }
+
+    public static void setBusiness(EcoSystem business) {
+        EcoSystem.business = business;
+    }
+
+    public RestaurantDirectory getRestaurantDirectory() {
+        return restaurantDirectory;
+    }
+
+    public void setRestaurantDirectory(RestaurantDirectory restaurantDirectory) {
+        this.restaurantDirectory = restaurantDirectory;
+    }
+
+    public CustomerDirectory getCustomerDirectory() {
+        return customerDirectory;
+    }
+
+    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
+        this.customerDirectory = customerDirectory;
+    }
+
+    public DeliveryManDirectory getDeliveryManDirectory() {
+        return deliveryManDirectory;
+    }
+    
+    public Restaurant loginResaturant(String usr, String pass) {
+       
+        return restaurantDirectory.loginResaturant(usr, pass);
+        
+    }
+
+    public void setDeliveryManDirectory(DeliveryManDirectory deliveryManDirectory) {
+        this.deliveryManDirectory = deliveryManDirectory;
+    }
+
+    public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory, OrderDirectory orderDirectory) {
 
         this.restaurantDirectory = restaurantDirectory;
         this.customerDirectory = customerDirectory;
         this.deliveryManDirectory = deliveryManDirectory;
+        this.orderDirectory = orderDirectory;
+        
+    }
+    
+    public Restaurant findRestaurant(String id) {
+        return restaurantDirectory.findRestaurant(id);
+    }
+    
+    public void removeRestaurant(String usr) {
+        restaurantDirectory.removeRestaurant(usr);
     }
     
     public static EcoSystem getInstance(){
@@ -60,53 +129,33 @@ public class EcoSystem extends Organization{
        //
        return false;
     }
-    
+
+
     public void removeCustomer(String id) 
              {
         customerDirectory.removeCustomer(id);
     }
 
-    public void addCustomer(Customer c) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    customerDirectory.addCustomer(c);
+    public void removeDeliveryMan(String id) {
+        deliveryManDirectory.removeDeliveryMan(id);
     }
 
-    public CustomerDirectory getCustomerDirectory() {
-        return customerDirectory;
-    }
-
-    public void removeDeliveryMan(String toString) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public DeliveryManDirectory getDeliveryManDirectory() {
-        return deliveryManDirectory;
-    }
-
-    public void removeRestaurant(String toString) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Restaurant findRestaurant(String toString) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public OrderDirectory getOrderDirectory() {
-        return orderDirectory;
-    }
-
-    public RestaurantDirectory getRestaurantDirectory() {
-        return restaurantDirectory;
+    public Customer loginCustomer(String usr, String pass) {
+        return customerDirectory.loginCustomer(usr, pass);
     }
 
     public void addOrder(Orders o) {
-       try{
+        try{
             orderDirectory.addOrder(o);
         }catch(Exception e){
             orderDirectory = new OrderDirectory();
             orderDirectory.addOrder(o);
         }
-       }
+        
+    }
 
+    public DeliveryMan loginDeliveryMan(String usr, String pass) {
+        return deliveryManDirectory.loginDeliveryMan(usr, pass);
+    }
     
 }

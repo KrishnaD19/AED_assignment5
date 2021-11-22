@@ -5,22 +5,38 @@
  */
 package Business.DeliveryMan;
 
+import Business.Role.Role;
+import Business.UserAccount.UserAccount;
+
 /**
  *
  * @author harold
  */
-public class DeliveryMan {
+public class DeliveryMan extends UserAccount{
+    
+    private String name;
+    private String accNo;
 
-    public Object getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     public DeliveryMan(String usr, String pass, Role r, String contactNo, String n, String ac) {
+        super(usr, pass, r, contactNo);
+        this.name = n;
+        this.accNo = ac;
+    }
+     
+    public String getName() {
+        return name;
     }
 
-    public Object getUsername() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setName(String name) {
+        this.name = name;
     }
 
-    Object getPassword() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getAccNo() {
+        return accNo;
+    }
+
+    public void setAccNo(String accNo) {
+        this.accNo = accNo;
     }
     
 }

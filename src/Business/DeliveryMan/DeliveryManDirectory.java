@@ -5,6 +5,7 @@
  */
 package Business.DeliveryMan;
 
+import Business.Customer.Customer;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  * @author harold
  */
 public class DeliveryManDirectory {
+
     private ArrayList<DeliveryMan> deliveryMans = new ArrayList<>();
     
     public DeliveryManDirectory(){
@@ -56,5 +58,4 @@ public class DeliveryManDirectory {
         return null;
     }
 
-    
 }

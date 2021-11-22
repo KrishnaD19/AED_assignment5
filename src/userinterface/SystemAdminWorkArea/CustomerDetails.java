@@ -7,6 +7,8 @@ package userinterface.SystemAdminWorkArea;
 import Business.Customer.Customer;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,8 +19,9 @@ import javax.swing.table.DefaultTableModel;
 public class CustomerDetails extends javax.swing.JPanel {
 
     /**
-     * Creates new form CustomerDetails
+     * Creates new form CutomerDetails
      */
+   
     EcoSystem e;
     DB4OUtil dB4OUtil;
     public CustomerDetails(EcoSystem e, DB4OUtil dB4OUtil) {
@@ -42,6 +45,7 @@ public class CustomerDetails extends javax.swing.JPanel {
         tb1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel1.setText("Customer Details");
 
         tb1.setModel(new javax.swing.table.DefaultTableModel(
@@ -52,7 +56,7 @@ public class CustomerDetails extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "UserName", "Contact No.", "Address"
             }
         ));
         jScrollPane1.setViewportView(tb1);
@@ -73,23 +77,23 @@ public class CustomerDetails extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(232, 232, 232)
+                            .addGap(268, 268, 268)
                             .addComponent(jLabel1))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(71, 71, 71)
+                            .addGap(120, 120, 120)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(jButton1)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -124,11 +128,12 @@ public class CustomerDetails extends javax.swing.JPanel {
             Object[] row = new Object[4];
             row[0] = c.getName();
             row[1] = c.getUsername();
-            
+            row[2] = c.getContactNo();
+            row[3] = c.getAddress().getStreet() + c.getAddress().getApt();
+
             model.addRow(row);
         }
 
       
     }
-
 }

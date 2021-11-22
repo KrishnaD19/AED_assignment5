@@ -9,7 +9,8 @@ package Business.Orders;
  * @author krishna
  */
 public class Orders {
-    private String restaurantName;
+    
+   private String restaurantName;
    private String item;
    private int price;
    private String userName;
@@ -88,5 +89,5 @@ public class Orders {
         this.userName = userName;
     }
    
-    
+   
 }
